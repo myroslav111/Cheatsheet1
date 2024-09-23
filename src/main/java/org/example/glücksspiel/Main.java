@@ -3,6 +3,9 @@ package org.example.glücksspiel;
 
 import java.util.Scanner;
 
+// Begrüßung
+// Glücksspiel
+
 public class Main {
     static int randomNum = (int)(Math.random() * 101);
 
