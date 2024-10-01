@@ -79,7 +79,7 @@ public class Main {
 
         }while (benutzerumfrage.ausgabeJaOderNein(scanner, message6));
 
-
+        System.out.println("Tschüss!");
 
     }
 
