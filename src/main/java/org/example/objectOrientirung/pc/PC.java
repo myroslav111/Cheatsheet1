@@ -14,6 +14,8 @@ Operating System: 60GB, Office Software: 10GB, Antivirus Software: 5GB, Browser:
 7. Gib den Speicherplatz bei der deinstallation der Software wieder frei.
  */
 
+
+
 public class PC extends Hardware implements Software {
       private String operatingSystem;
       private String officeSoftware;
@@ -22,18 +24,10 @@ public class PC extends Hardware implements Software {
       private String emailClient;
       private String ide;
 
-    public PC(String meinboard, String prozessor, int ram, String hardDrive, int hardDriveSize, String graphicsCard,
-              String operatingSystem, String ide, String emailClient, String browser, String antivirusSoftware, String officeSoftware) {
-        super(meinboard, prozessor, ram, hardDrive, hardDriveSize, graphicsCard);
 
-        this.operatingSystem = operatingSystem;
-        this.officeSoftware = officeSoftware;
-        this.antivirusSoftware = antivirusSoftware;
-        this.browser = browser;
-        this.emailClient = emailClient;
-        this.ide = ide;
+      public PC() {
+        super();
     }
-
 
 
     public String getOperatingSystem() {

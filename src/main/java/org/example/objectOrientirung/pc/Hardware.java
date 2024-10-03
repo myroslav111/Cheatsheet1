@@ -1,4 +1,6 @@
 package org.example.objectOrientirung.pc;
+
+
 /*
 1. Erstelle eine abstrakte Klasse 'Hardware' mit den Eigenschaften:
 mainboard: String, processor: String, ram: int, hardDrive: String, hardDriveSize: int, graphicsCard: String
@@ -9,29 +11,29 @@ mainboard = "Asus X1", processor = "Intel i7", ram = 16, hardDrive = "SSD", hard
 
 
 public abstract class Hardware {
-    private String meinboard;
+    private String mainboard;
     private String prozessor;
     private int ram;
     private String hardDrive;
     private int hardDriveSize;
     private String graphicsCard;
 
-    public Hardware(String meinboard, String prozessor, int ram, String hardDrive, int hardDriveSize, String graphicsCard){
-        this.meinboard = meinboard;
-        this.prozessor = prozessor;
-        this.ram = ram;
-        this.hardDrive = hardDrive;
-        this.hardDriveSize = hardDriveSize;
-        this.graphicsCard = graphicsCard;
+    public Hardware(){
+        this.mainboard = "Asus X1";
+        this.prozessor = "Intel i7";
+        this.ram = 16;
+        this.hardDrive = "SSD";
+        this.hardDriveSize = 500;
+        this.graphicsCard = "Nvidia RTX 2080";
     }
 
 
-    public String getMeinboard() {
-        return meinboard;
+    public String getMainboard() {
+        return mainboard;
     }
 
-    public void setMeinboard(String meinboard) {
-        this.meinboard = meinboard;
+    public void setMainboard(String mainboard) {
+        this.mainboard = mainboard;
     }
 
     public String getProzessor() {

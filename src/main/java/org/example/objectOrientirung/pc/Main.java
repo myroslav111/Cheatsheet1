@@ -4,9 +4,9 @@ package org.example.objectOrientirung.pc;
 //Operating System: 60GB, Office Software: 10GB, Antivirus Software: 5GB, Browser: 5GB, Email Client: 5GB, IDE: 10GB
 public class Main {
     public static void main(String[] args) {
-        PC pc = new PC("Asus X1", "Intel i7", 16, "SSD",
-                 500, "Nvidia RTX 2080",null, null,
-                 null, null, null, null );
+
+
+        PC pc = new PC();
 
         pc.softwareInfo();
         System.out.println();
@@ -17,11 +17,14 @@ public class Main {
         pc.installOperatingSystem("Ubuntu");
         pc.installOfficeSoftware("Word");
         System.out.println();
+
+
         pc.softwareInfo();
         System.out.println();
 
         pc.uninstallIDE(pc.getIde());
         pc.uninstallAntivirusSoftware(pc.getAntivirusSoftware());
+
         pc.softwareInfo();
 
         System.out.println();
