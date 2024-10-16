@@ -1,4 +1,4 @@
-package org.example.abstractClass;
+package org.example.abstractClass.animal;
 
 public class Cat extends Animal{
 

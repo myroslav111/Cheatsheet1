@@ -15,7 +15,9 @@ Operating System: 60GB, Office Software: 10GB, Antivirus Software: 5GB, Browser:
  */
 
 
+import lombok.Getter;
 
+@Getter
 public class PC extends Hardware implements Software {
       private String operatingSystem;
       private String officeSoftware;
@@ -30,35 +32,13 @@ public class PC extends Hardware implements Software {
     }
 
 
-    public String getOperatingSystem() {
-        return operatingSystem;
-    }
 
-    public String getOfficeSoftware() {
-        return officeSoftware;
-    }
-
-    public String getAntivirusSoftware() {
-        return antivirusSoftware;
-    }
-
-    public String getBrowser() {
-        return browser;
-    }
-
-    public String getEmailClient() {
-        return emailClient;
-    }
-
-    public String getIde() {
-        return ide;
-    }
 
     @Override
     public void installOperatingSystem(String operatingSystem) {
         if (this.operatingSystem == null) {
                this.operatingSystem = operatingSystem;
-            installUndReduzSpeicher(60);
+            installUndReduzSpeicher(Speicherbedarf.OPERATING_SYSTEM.getGigabyte());
             System.out.println("Operating System ist installiert.");
 
         }else {
@@ -70,7 +50,7 @@ public class PC extends Hardware implements Software {
     public void installOfficeSoftware(String officeSoftware) {
         if (this.officeSoftware == null) {
             this.officeSoftware = officeSoftware;
-            installUndReduzSpeicher(10);
+            installUndReduzSpeicher(Speicherbedarf.OFFICE_SOFTWARE.getGigabyte());
             System.out.println("Office Software ist installiert.");
 
         } else {
@@ -83,7 +63,7 @@ public class PC extends Hardware implements Software {
     public void installAntivirusSoftware(String antivirusSoftware) {
         if (this.antivirusSoftware == null) {
             this.antivirusSoftware = antivirusSoftware;
-            installUndReduzSpeicher(5);
+            installUndReduzSpeicher(Speicherbedarf.ANTIVIRUS_SOFTWAREN.getGigabyte());
             System.out.println("Antivirus Software ist installiert.");
 
         }else {
@@ -96,7 +76,7 @@ public class PC extends Hardware implements Software {
     public void installBrowser(String browser) {
         if (this.browser == null) {
             this.browser = browser;
-            installUndReduzSpeicher(5);
+            installUndReduzSpeicher(Speicherbedarf.BROWSER.getGigabyte());
             System.out.println("Browser ist installiert.");
 
         }else{
@@ -109,7 +89,7 @@ public class PC extends Hardware implements Software {
     public void installEmailClient(String emailClient) {
         if (this.emailClient == null) {
             this.emailClient = emailClient;
-            installUndReduzSpeicher(5);
+            installUndReduzSpeicher(Speicherbedarf.EMAIL_CLIENT.getGigabyte());
             System.out.println("Email Client ist installiert.");
 
         }else{
@@ -122,7 +102,7 @@ public class PC extends Hardware implements Software {
     public void installIDE(String ide) {
         if (this.ide == null) {
             this.ide = ide;
-            installUndReduzSpeicher(10);
+            installUndReduzSpeicher(Speicherbedarf.IDE.getGigabyte());
             System.out.println("IDE ist installiert.");
 
         }else{
@@ -136,7 +116,7 @@ public class PC extends Hardware implements Software {
         if (this.officeSoftware == null) {
             System.out.println("Office Software wurde nicht installiert");
         }else {
-            uninstallUndFreiSpeicherMach(10);
+            uninstallUndFreiSpeicherMach(Speicherbedarf.OFFICE_SOFTWARE.getGigabyte());
             this.officeSoftware = null;
             System.out.println(officeSoftware + " wurde deinstaliert");
         }
@@ -149,7 +129,7 @@ public class PC extends Hardware implements Software {
         if (this.operatingSystem == null) {
             System.out.println("Operating System wurde nicht installiert");
         }else {
-            uninstallUndFreiSpeicherMach(60);
+            uninstallUndFreiSpeicherMach(Speicherbedarf.OPERATING_SYSTEM.getGigabyte());
             this.operatingSystem = null;
             System.out.println(operatingSystem + " wurde deinstaliert");
         }
@@ -160,7 +140,7 @@ public class PC extends Hardware implements Software {
         if (this.antivirusSoftware == null) {
             System.out.println("Antivirus Software wurde nicht installiert");
         }else {
-            uninstallUndFreiSpeicherMach(5);
+            uninstallUndFreiSpeicherMach(Speicherbedarf.ANTIVIRUS_SOFTWAREN.getGigabyte());
             this.antivirusSoftware = null;
             System.out.println(antivirusSoftware + " wurde deinstaliert");
         }
@@ -172,7 +152,7 @@ public class PC extends Hardware implements Software {
         if (this.browser == null) {
             System.out.println("Browser wurde nicht installiert");
         }else {
-            uninstallUndFreiSpeicherMach(5);
+            uninstallUndFreiSpeicherMach(Speicherbedarf.BROWSER.getGigabyte());
             this.browser = null;
             System.out.println(browser + " wurde deinstaliert");
         }
@@ -184,7 +164,7 @@ public class PC extends Hardware implements Software {
         if (this.emailClient == null) {
             System.out.println("Email Client wurde nicht installiert");
         }else {
-            uninstallUndFreiSpeicherMach(5);
+            uninstallUndFreiSpeicherMach(Speicherbedarf.EMAIL_CLIENT.getGigabyte());
             this.emailClient = null;
             System.out.println(emailClient + " wurde deinstaliert");
         }
@@ -196,7 +176,7 @@ public class PC extends Hardware implements Software {
         if (this.ide == null) {
             System.out.println("IDE wurde nicht installiert");
         }else {
-            uninstallUndFreiSpeicherMach(10);
+            uninstallUndFreiSpeicherMach(Speicherbedarf.IDE.getGigabyte());
             this.ide = null;
             System.out.println(ide + " wurde deinstaliert");
         }
@@ -207,32 +187,32 @@ public class PC extends Hardware implements Software {
     public void softwareInfo() {
         System.out.println("Die installierten Softwarepakete: ");
         if (operatingSystem != null) {
-            System.out.println("Operating System: " + operatingSystem);
+            System.out.println("Operating System: " + operatingSystem + " " + Speicherbedarf.OPERATING_SYSTEM.getGigabyte() + "GB");
         }else {
             System.out.println("Operating System: Keine");
         }
         if (officeSoftware != null) {
-            System.out.println("Office Softwar: " + officeSoftware);
+            System.out.println("Office Softwar: " + officeSoftware + " " + Speicherbedarf.OFFICE_SOFTWARE.getGigabyte() + "GB");
         }else {
             System.out.println("Office Software: Keine");
         }
         if (antivirusSoftware != null) {
-            System.out.println("Antivirus Software: " + antivirusSoftware);
+            System.out.println("Antivirus Software: " + antivirusSoftware + " " + Speicherbedarf.ANTIVIRUS_SOFTWAREN.getGigabyte() + "GB");
         }else {
             System.out.println("Antivirus Software: Keine");
         }
         if (browser != null) {
-            System.out.println("Browser: " + browser);
+            System.out.println("Browser: " + browser + " " + Speicherbedarf.BROWSER.getGigabyte() + "GB");
         }else {
             System.out.println("Browser: Keine");
         }
         if (emailClient != null) {
-            System.out.println("Email Client: " + emailClient);
+            System.out.println("Email Client: " + emailClient + " " + Speicherbedarf.EMAIL_CLIENT.getGigabyte() + "GB");
         }else {
             System.out.println("Email Client: Keine");
         }
         if ( ide!= null) {
-            System.out.println("IDE: " + ide);
+            System.out.println("IDE: " + ide + " " + Speicherbedarf.IDE.getGigabyte() + "GB");
         }else {
             System.out.println("IDE: Keine");
         }

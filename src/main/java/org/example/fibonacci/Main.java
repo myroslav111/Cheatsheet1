@@ -17,20 +17,34 @@ package org.example.fibonacci;
    Hier wäre etwa -1 als Ergebnis vorstellbar.
 */
 
+
 import java.util.Scanner;
 
 public class Main {
     public static int fibonacci(int n){
-        if (n == 0) {
 
-            return 0;
+        if (n < 0) {
+            System.out.println("Fehler: Negative Eingabewerte sind nicht erlaubt.");
+            return -1;
+        }
+        if (n == 0) {
+            return n;
         } else if (n == 1) {
 
-            return 1;
+            return n;
         }else {
-            System.out.println("");
-
             return fibonacci(n -1) + fibonacci(n -2);
+
+        }
+    }
+
+    public static void printFib(int n, int cur){
+        if(cur < n){
+        System.out.print(fibonacci(cur));
+            if (cur < n -1) {
+                System.out.println(", ");
+            }
+        printFib(n, cur + 1);
         }
     }
 
@@ -48,14 +62,13 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        //eingabe = scanner.nextInt();
         System.out.println("hallo");
-        System.out.println(fibonacci(5));
+        eingabe = scanner.nextInt();
 
 
-
-
-
+        printFib(eingabe, 0);
+        System.out.println();
 
     }
+
 }

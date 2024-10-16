@@ -9,8 +9,8 @@ Du arbeitest für ein Unternehmen, das ein Bestellsystem für ein Café entwicke
 
 **Aufgabe:**
 
-        1. Erstelle ein Enum `KaffeeTyp`, das folgende Kaffeetypen enthält:
-        - ESPRESSO
+1. Erstelle ein Enum `KaffeeTyp`, das folgende Kaffeetypen enthält:
+    - ESPRESSO
     - LATTE
     - CAPPUCCINO
     - AMERICANO
@@ -18,27 +18,32 @@ Du arbeitest für ein Unternehmen, das ein Bestellsystem für ein Café entwicke
 2. Jeder Kaffeetyp soll einen Standardpreis und eine Standardfüllmenge (in Millilitern) haben.
 *  Diese Informationen sollen über den Konstruktor des Enums gesetzt werden.
 
-        3. Erstelle ein Enum `Groesse`, das folgende Größen für den Kaffee enthält:
-     - KLEIN
+3. Erstelle ein Enum `Groesse`, das folgende Größen für den Kaffee enthält:
+    - KLEIN
     - MITTEL
     - GROSS
 
-4. Jede Größe soll einen Aufpreis gegenüber dem Basispreis des Kaffees haben:
-        - KLEIN: kein Aufpreis
-    - MITTEL: 0.50€
-    - GROSS: 1.00€
+
 */
 public enum Kaffeetypen {
-    ESPRESSO(1.5, 100),
-    LATTE(2.0, 200),
-    CAPPUCCINO(1.6, 250),
-    AMERICANO(1.8, 300);
+    ESPRESSO(1.05, 100),
+    LATTE(2.0, 100),
+    CAPPUCCINO(1.6, 100),
+    AMERICANO(1.8, 100);
 
     final double preis;
     final int menge;
 
     Kaffeetypen(double preis, int menge) {
         this.preis = preis;
-        this.menge = (int) preis;
+        this.menge = menge;
+    }
+
+    public double getPreis() {
+        return preis;
+    }
+
+    public int getMenge() {
+        return menge;
     }
 }
