@@ -4,8 +4,7 @@ public class DeliveryCalculator {
 
     public static void calculatePreisDelivery(double distance, double nutzlast){
 
-
-        double gesamtpreis = 0;
+        double gesamtpreis = 0.0;
         if (distance <=  25 && nutzlast <= 12) {
             int preis_nutzlast;
             if (nutzlast > 6) {
