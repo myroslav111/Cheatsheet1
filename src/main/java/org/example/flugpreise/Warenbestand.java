@@ -30,7 +30,7 @@ public class Warenbestand {
         }
     }
 
-    // set Werte des Produkt
+    // set Werte des Produkts
     public void setProdukte(String name, int menge) {
         produkte.put(name, menge);
     }
