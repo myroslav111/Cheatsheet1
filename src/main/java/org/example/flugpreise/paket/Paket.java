@@ -1,4 +1,4 @@
-package org.example.flugpreise;
+package org.example.flugpreise.paket;
 
 import lombok.Getter;
 

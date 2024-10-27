@@ -1,4 +1,6 @@
-package org.example.flugpreise;
+package org.example.flugpreise.logistikzentrum;
+
+import org.example.flugpreise.ProduktList;
 
 import java.util.HashMap;
 import java.util.Map;

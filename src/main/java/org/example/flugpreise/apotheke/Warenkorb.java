@@ -1,11 +1,12 @@
-package org.example.flugpreise;
+package org.example.flugpreise.apotheke;
 
 import java.util.List;
 
 public class Warenkorb {
-    private List<String> produkte;
+    public List<String> produkte;
 
     public void addProdukte(String produkt){
+        produkte.add(produkt);
 
     }
 
@@ -14,6 +15,5 @@ public class Warenkorb {
     }
 
     public void showWarenkorb(){
-
     }
 }

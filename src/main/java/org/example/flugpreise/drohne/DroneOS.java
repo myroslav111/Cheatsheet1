@@ -1,4 +1,4 @@
-package org.example.flugpreise;
+package org.example.flugpreise.drohne;
 
 public interface DroneOS {
     public void berechneStrecke(String start, String ziel);

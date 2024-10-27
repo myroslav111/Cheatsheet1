@@ -1,7 +1,9 @@
-package org.example.flugpreise;
+package org.example.flugpreise.drohne;
+
+import org.example.flugpreise.paket.Paket;
 
 public class InfoCopter extends Drohne implements DroneOS {
-    //public Paket paket;
+    public Paket paket;
 
     public InfoCopter(){
         super();
