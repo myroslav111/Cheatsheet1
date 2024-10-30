@@ -58,3 +58,5 @@ Parameter übergeben.
 1. Erstellen Sie eine Klasse `Main` mit der `main` Methode.
 2. Erstellen Sie ein Objekt der Klasse `Apotheke` und ein Objekt der Klasse `Logistikzentrum`.
 3. Erstelle eine Methode `bestellungAufgeben()`, die die Bestellung des Kunden entgegennimmt und die Bestellung an das Logistikzentrum weiterleitet.
+
+https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Untitled%20Diagram.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fmyroslav111%2FCheatsheet1%2Fmaster%2FUntitled%2520Diagram.drawio

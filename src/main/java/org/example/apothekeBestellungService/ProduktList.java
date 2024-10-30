@@ -1,4 +1,4 @@
-package org.example.flugpreise;
+package org.example.apothekeBestellungService;
 
 
 public enum ProduktList {

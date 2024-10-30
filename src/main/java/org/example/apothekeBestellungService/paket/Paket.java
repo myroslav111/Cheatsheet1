@@ -1,4 +1,4 @@
-package org.example.flugpreise.paket;
+package org.example.apothekeBestellungService.paket;
 
 import lombok.Getter;
 
@@ -23,13 +23,8 @@ public class Paket {
     }
 
     public void addWaren(String nameMedikament, int menge){
-        HashMap<String, Integer> inhaltMap = new HashMap<>();
-        inhaltMap.put(nameMedikament, menge);
-        paketinhalt.add(inhaltMap);
-
     }
 
     public void clearWaren(String nameMedikament){
-        paketinhalt.get(0).remove(nameMedikament);
     }
 }

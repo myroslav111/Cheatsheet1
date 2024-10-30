@@ -19,14 +19,15 @@ public class Main {
         Kunde kunde = new Kunde(1, "Doe", "John", "Street 123", "john.com", "password123");
 
 
-        userAnfrage.userAnfrageMailPsw();
-        // Attempt login
+        UserAnfrage.userAnfrageMailPsw();
+        // Anmeldeversuch
         if (apotheke.login(kunde, "john.com", "password123")) {
             apotheke.bestellungAufgeben(warenbestand, warenkorb);
 
 
             double gesamtpreis = apotheke.berechnePreisProdukte( warenkorb.produkte, warenbestand);
             System.out.println("Gesamtpreis der Bestellung: " + Math.round(gesamtpreis * 100.0) / 100.0);
+            //warenbestand.showWarenbestand();
         } else {
             System.out.println("Login fehlgeschlagen.");
         }

@@ -1,4 +1,4 @@
-package org.example.flugpreise.drohne;
+package org.example.apothekeBestellungService.drohne;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -11,9 +11,7 @@ import java.util.Scanner;
 
 public class Apotheke implements BestellService {
     private Warenkorb warenkorb = new Warenkorb();
-
-
-
+    static int menge;
     @Override
     public void addWarenkorb(String produkt, int anzahl) {
 
@@ -41,6 +39,10 @@ public class Apotheke implements BestellService {
 
     }
 
+    // berechnet die Gesamtkosten für eine Liste von Produkten basierend auf deren Preisen,
+    // die im Warenbestand definiert sind.
+    // produkte deren Preise summiert werden sollen.
+    // warenbestand die Preise und Mengen der verfügbaren Produkte enthält.
     @Override
     public double berechnePreisProdukte(List<String> produkte, Warenbestand warenbestand) {
         double sum = 0;
@@ -71,18 +73,33 @@ public class Apotheke implements BestellService {
         return sum;
     }
 
+
+
+    // ermöglicht es einem Benutzer, Produkte aus dem Warenbestand auszuwählen und eine Bestellung aufzugeben
+    // warenkorb das die vom Benutzer ausgewählten Produkte speichert
     public void bestellungAufgeben(Warenbestand warenbestand, Warenkorb warenkorb) {
 
         System.out.println("Das haben wir in Angebot");
         warenbestand.showWarenbestand();
         System.out.println("Machen Sie Ihren Auftrag");
+        // wird verwendet, um dem Benutzer zu ermöglichen, mehrere Produkte auszuwählen
         do {
+            // Es wird aufgerufen, um Medikamente zum Warenkorb hinzuzufügen.
             warenkorb.addProduct("Aspirin");
+            warenbestand.produktMengen.put("Aspirin", (warenbestand.produktMengen.get("Aspirin") - 1));
+
             warenkorb.addProduct("Ibu");
+            warenbestand.produktMengen.put("Ibu", (warenbestand.produktMengen.get("Ibu") - 1));
             warenkorb.addProduct("Vitamin C");
+            warenbestand.produktMengen.put("Vitamin C", (warenbestand.produktMengen.get("Vitamin C") - 1));
+            System.out.println("Hier User macht seine Bestelung");
+
         }while (UserAnfrage.userAuswahlJaOderNein(new Scanner(System.in),"Wollen Sei noch etw. y/n"));
 
+
         System.out.println("Hier ist Ihre Bestellung");
+
+        // Bestellübersicht
         warenkorb.showWarenkorb();
     }
 
